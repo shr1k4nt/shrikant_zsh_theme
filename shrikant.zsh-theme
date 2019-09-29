@@ -1,7 +1,8 @@
-DTS=`date +"%r"`
+function dts() {
+	echo `date +"%d-%m-%Y %r"`
+}
 
-PROMPT=$'
-%{$fg[white]%}%n@%m%{$reset_color%} %{$fg[blue]%}[%1~]%{$reset_color%} $(git_prompt_info)$(bzr_prompt_info)%{$fg[white]%}[$DTS]%{$reset_color%}
+PROMPT=$'%{$fg[white]%}%n@%m%{$reset_color%} %{$fg[blue]%}[%1~]%{$reset_color%} $(git_prompt_info)%{$fg[white]%}[$(dts)]%{$reset_color%}
 %{$fg_bold[black]%}$%{$reset_color%} '
 
 GIT_CB=""
